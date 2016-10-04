@@ -1,0 +1,24 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "inject.css" ],
+      "exclude_matches": [  ],
+      "js": [ "inject.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file:///*" ]
+   } ],
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+   },
+   "manifest_version": 2,
+   "name": "YouTube Enhancement Suite",
+   "description": "Enhance your browsing experience on YouTube. Press S to skip video.",
+   "permissions": [ "activeTab", "storage", "tabs" ],
+   "version": "0.1",
+   "web_accessible_resources": [ "image/*", "sons/*" ]
+}

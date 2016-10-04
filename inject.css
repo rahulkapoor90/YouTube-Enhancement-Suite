@@ -1,0 +1,150 @@
+.tc-videoController {
+  position: absolute;
+  color: white;
+
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0px;
+  line-height: 0em;
+
+  cursor: default;
+  z-index: 9999999;
+  opacity: 1;
+
+  font-family: Arial;
+  font-size: 13px;
+}
+
+.tc-videoController:hover {
+	
+  opacity: 1;
+}
+
+.tc-videoController:hover .tc-controls {
+  display: block;
+}
+
+.tc-controls {
+
+  transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+  display: none;
+  margin-left:0em;
+}
+
+.tc-controls button {
+  cursor: pointer;
+  color: black !important;
+  font-weight: bold !important;
+  margin: 0 0px !important;
+  border-radius: 0px !important;
+  padding: 0px 0px !important;
+  font-size: 15px !important;
+  line-height: 15px !important;
+}
+
+.tc-videoController button.tc-hideButton {
+  margin: 0 0px 0 20px !important;
+  opacity: 1;
+}
+
+/* shift controller when YouTube infobar is present */
+.ytp-block-autohide:not(.el-detailpage):not(.hide-info-bar) .tc-videoController {
+  margin-top: 40px;
+}
+
+body:not(.not-yt-legacy-css) .html5-video-player:not(.ytp-block-autohide):not(.el-detailpage) .tc-videoController {
+    transition: margin-top .5s cubic-bezier(0.4,0,0.2,1);
+    margin-top: 0px;
+}
+
+html[data-player-size=fullscreen] .tc-videoController {
+  display: block;
+  margin-top: 0px;
+}
+
+html[data-player-size=fullscreen] .html5-video-player:not(.ytp-block-autohide) .tc-videoController {
+  transition: opacity .5s cubic-bezier(0.4,0,0.2,1);
+  opacity: 1;
+}
+
+/* new YT player */
+body.not-yt-legacy-css .el-embedded .tc-videoController {
+  margin-top: 50px;
+}
+
+body.not-yt-legacy-css .ytp-fullscreen .tc-videoController {
+  display: block;
+  margin-top: 60px;
+}
+
+body.not-yt-legacy-css .ytp-autohide .tc-videoController {
+  transition: opacity .5s cubic-bezier(0.4,0,0.2,1);
+  opacity: 1;
+}
+
+/* shift controller on Vine embeds: mute always visible */
+/* e.g. https://twitter.com/Vine_Football/status/550614684575858688 */
+.video-container .tc-videoController {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/* shift controller on vine.co */
+/* e.g. https://vine.co/v/OrJj39YlL57 */
+.video-container .vine-video-container .tc-videoController {
+  margin-left: 0px;
+}
+
+/* shift YT 3D controller down */
+/* e.g. https://www.youtube.com/watch?v=erftYPflJzQ */
+.webgl-pan-button {
+  top: 50px !important;
+}
+
+html[data-player-size=fullscreen] .webgl-pan-button {
+  top: 80px !important;
+}
+
+
+.monster {
+  width: 100px;
+  height: 50px;
+  margin-top: 0px;
+  margin-left: 0px;
+  /*background-image: url('chrome-extension://__MSG_@@extension_id__/image/sprite.png');
+  animation: play 15s steps(150) infinite;*/
+}
+
+@keyframes play {
+    100% { background-position: -15000px; }
+}
+
+.monster2 {
+  width: 100px;
+  height: 50px;
+  margin-top: 0px;
+  margin-left: 0px;
+  /*background-image: url('chrome-extension://__MSG_@@extension_id__/image/sprite_logo.png');
+  animation: play2 5s steps(359, end) forwards;*/
+
+}
+
+
+@keyframes play2 {
+    100% { background-position: -35900px; }
+}
+
+.monster3 {
+  width: 100px;
+  height: 50px;
+  margin-top: 0px;
+  margin-left: 0px;
+  /*background-image: url('chrome-extension://__MSG_@@extension_id__/image/sprite_logo.png');
+  animation: play3 5s steps(359) infinite;*/
+
+}
+
+@keyframes play3 {
+    100% { background-position: -35900px; }
+}
+
