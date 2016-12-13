@@ -31,6 +31,6 @@
    "description": "Enhance your browsing experience on YouTube.",
    "permissions": [ "activeTab", "storage", "tabs", "notifications"],
    "short_name": "YES",
-   "version": "0.2",
+   "version": "0.3",
    "web_accessible_resources": [ "image/*", "sons/*" ]
 }
