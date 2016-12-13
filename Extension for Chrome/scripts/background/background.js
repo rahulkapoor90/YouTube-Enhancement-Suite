@@ -1,3 +1,22 @@
+function audioNotification(){
+    var yourSound = new Audio('audio/notification.mp3');
+    yourSound.play();
+}
+chrome.runtime.setUninstallURL('https://rahulkapoor90.github.io/vitacademics-enhancement-suite/uninstall/');
+chrome.runtime.onInstalled.addListener(function(details){
+      if(details.reason == "update"){
+        var thisVersion = chrome.runtime.getManifest().version;
+        audioNotification();
+        var opt = {
+          type: "basic",
+          title: "Hello Friend!",
+          message: "YouTube Enhancement Suite has been updated with new features and bug fixes.",
+          iconUrl: chrome.extension.getURL('icons/icon128.png')
+        }
+            chrome.notifications.create(opt);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
 		 chrome.storage.local.get("message", function(result)
     {
