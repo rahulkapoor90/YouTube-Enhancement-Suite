@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/rahulkapoor90/Youtube-Enhancement-Suite/master/Media/logo.gif" width="500">
+# <img src="https://raw.githubusercontent.com/rahulkapoor90/YouTube-Enhancement-Suite/master/Media/logo.gif" width="500">
 
 [![Code Climate](https://codeclimate.com/github/rahulkapoor90/YouTube-Enhancement-Suite/badges/gpa.svg)](https://codeclimate.com/github/rahulkapoor90/YouTube-Enhancement-Suite)
 
