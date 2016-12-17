@@ -1,0 +1,263 @@
+﻿/*
+Ratings Preview for YouTube
+Copyright (C) 2011-2015 Cristian Perez <http://www.cpr.name>
+All rights reserved.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL CRISTIAN PEREZ BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+/* ytrp stands for YouTube Ratings Preview /*
+/* rb stands for rating bar */
+/* bg stands for background */
+/* fg stands for foreground */
+/* hl stands for highlight */
+
+/*//////////////////// OWN STYLES ////////////////////*/
+
+.ytrp_wrapper
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+}
+
+.ytrp_wrapper.no_transition
+{
+	transition: none;
+	-webkit-transition: none;
+}
+
+.ytrp_wrapper:hover
+{
+	opacity: 1;
+}
+
+.ytrp_rb_bg
+{
+	position: absolute;
+	background: #CCC;
+	z-index: 1;
+}
+
+.ytrp_rb_fg
+{
+	position: absolute;
+}
+
+.ytrp_rb_bg_bottom
+{
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	border-top: 1px solid #FFF;
+}
+
+.ytrp_rb_bg_top
+{
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	border-bottom: 1px solid #FFF;
+}
+
+.ytrp_rb_bg_left
+{
+	left: 0;
+	top: 4px;
+	bottom: 4px;
+	width: 4px;
+	border-right: 1px solid #FFF;
+}
+
+.ytrp_rb_bg_right
+{
+	right: 0;
+	top: 4px;
+	bottom: 4px;
+	width: 4px;
+	border-left: 1px solid #FFF;
+}
+
+.ytrp_rb_fg_like
+{
+	bottom: 0;
+	left: 0;
+	height: 4px;
+	background: #2793e6;
+}
+
+.ytrp_rb_fg_dislike
+{
+	bottom: 0;
+	right: 0;
+	height: 4px;
+	background: #CCC;
+	border-left: 1px solid #CCC;
+}
+
+.ytrp_rb_fg_norating
+{
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	background: #CCC;
+}
+
+.ytrp_rb_fg_hl
+{
+	background: #cc181e;
+}
+
+.ytrp_rb_fg_hl_bottom
+{
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+}
+
+.ytrp_rb_fg_hl_top
+{
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+}
+
+.ytrp_rb_fg_hl_left
+{
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+}
+
+.ytrp_rb_fg_hl_right
+{
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+}
+
+.ytrp_tooltip
+{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 25%;
+	z-index: 1;
+}
+
+/*//////////////////// OVERRIDEN STYLES ////////////////////*/
+
+.video-extras-sparkbars, .video-extras-sparkbar-likes, .video-extras-sparkbar-dislikes
+{
+	height: 4px !important;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.video-extras-sparkbars
+{
+	margin: 4px 0 0 0 !important;
+	overflow: visible !important;
+	font-size: 0px !important;
+	white-space: nowrap !important;
+}
+
+.video-extras-sparkbar-likes
+{
+	background: #2793e6 !important;
+	float: none !important;
+	display: inline-block !important;
+	margin-left: -1px !important;
+}
+
+.video-extras-sparkbar-dislikes
+{
+	background: #CCC !important;
+	float: none !important;
+	display: inline-block !important;
+	border-left: 1px solid #CCC !important;
+}
+
+.watch-view-count
+{
+	white-space: nowrap !important;
+    width: auto !important;
+    right: 0 !important;
+}
+
+.video-time, .video-actions, .vdur
+{
+	bottom: 6px !important;
+}
+
+.video-time, .addto-button, .yt-uix-button, .vdur, .ytp-button, .videowall-still-info-cancel, .videowall-still-info-content
+{
+	z-index: 2 !important;
+}
+
+.playlist-data-section, .videowall-still-takeover
+{
+	z-index: 1 !important;
+}
+
+#masthead-expanded-lists-container
+{
+	padding-bottom: 1px !important;
+}
+
+/* Only Chrome: prevents bars to be 1px thinner in some thumbnails. Values calculated by trial-error. */
+
+.yt-thumb-72
+{
+	height: 40.250px; /* should override 40.500px */
+}
+
+.yt-thumb-100
+{
+	height: 56px; /* should override 56.250px */
+}
+
+.yt-thumb-106
+{
+	height: 59.125px; /* should override 59.625px */
+}
+
+.yt-thumb-120
+{
+	height: 67.250px; /* should override 67.500px */
+}
+
+.yt-thumb-170
+{
+	height: 69.250px; /* should override 69.750px */
+}
+
+.yt-thumb-196
+{
+	height: 110px; /* should override 110.250px */
+}
+
+.yt-thumb-224
+{
+	height: 67.250px; /* Special case, should override 67.500 */
+}
+
+ .yt-thumb-370
+{
+	height: 226px; /* should override 226.125px */
+}

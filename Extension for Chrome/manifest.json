@@ -7,7 +7,7 @@
    "browser_action": {
       "default_icon": "icons/icon48.png",
       "default_popup": "popup.html",
-      "default_title": "Youtube Enhancement Suite"
+      "default_title": "YouTube™ Enhancement Suite"
   },
    "content_scripts": [ {
       "all_frames": true,
@@ -20,7 +20,11 @@
       "js": [ "scripts/backimage/bcimg.js" ],
       "matches": [ "*://*.youtube.com/*" ],
       "run_at": "document_start"
-   } ],
+   },
+   {
+       "js": [ "script.js" ],
+       "matches": [ "*://*.youtube.com/*" ]
+    } ],
    "icons": {
       "128": "icons/icon128.png",
       "130": "icons/icon130.png",
@@ -32,10 +36,15 @@
    },
    "manifest_version": 2,
    "name": "YouTube Enhancement Suite",
+   "minimum_chrome_version": "34",
+   "options_ui": {
+      "chrome_style": true,
+      "page": "popup.html"
+   },
    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-   "description": "Enhance your browsing experience on YouTube.",
-   "permissions": [ "activeTab", "storage", "tabs", "notifications"],
+   "description": "Enhance your browsing experience on YouTube™.",
+   "permissions": [ "activeTab", "storage", "tabs", "notifications","*://*/*", "tabs", "contextMenus", "webRequest", "webRequestBlocking"],
    "short_name": "YES",
-   "version": "0.4",
-   "web_accessible_resources": [ "image/*", "sons/*" ]
+   "version": "0.5.2",
+   "web_accessible_resources": [ "image/*", "sons/*","css/style.css","style.css" ]
 }

@@ -1,43 +1,105 @@
-<!doctype html>
-<html>
-  <head>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>VIT VOLSBB Pronto Login</title>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        max-width: 100%;
-        white-space: nowrap;
-      }
-    </style>
-  </head>
-  <body>
-  </div>
-    <div id="status" class="container">
-      <div id="content">
-      <h1 style="font-size: 16px;">YouTube Enhancement Suite</h1>
-      <h2 style="font-size: 12px;">* NOTE: We are constantly adding more features <br>and bug fixes. <br><br>Contribute on <a href="https://github.com/rahulkapoor90/YouTube-Enhancement-Suite">Github</a></h2>
-          <!-- <h3 style="font-size: 16px;">Pronto Authentication</h3> -->
-          <!-- <form>
-        <div class="form-group">
-            <input type="text" class="form-control" id="username" placeholder="Username">
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" id="password" placeholder="Password">
-        </div>
-        <div class="form-group">
-        <button id="save" style="float:right;margin-bottom:10px;" class="btn btn-info">Save</button>
-        </div>
-          </form> -->
-        </div>
-  </div>
-     <script src="scripts/jquery.min.js"></script>
-     <script src="scripts/bootstrap.min.js"></script>
-     <script src="scripts/popup.js"></script>
-     <script src="scripts/options.js"></script>
-     <script src="scripts/google-analytics/ansyncTracking.js"></script>
-  </body>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Ratings Preview for YouTube™ settings</title>
+<link rel="icon" type="image/png" href="icons/icon16.png" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<style type="text/css">
+.opacity_on_hover
+{
+	opacity: 0.6;
+	transition: opacity 0.4s ease-out;
+	-webkit-transition: opacity 0.4s ease-out;
+    -moz-transition: opacity 0.4s ease-out;
+}
+.opacity_on_hover:hover
+{
+	opacity: 1.0;
+}
+</style>
+<script src="popup.js"></script>
+</head>
+
+<body style="width:372px; margin: -8px auto 0 auto; text-align:center; background-color:white; overflow:hidden;">
+
+	<div style="display:inline-block; position:relative; width:348px; padding: 0px 8px; text-align:left; overflow:hidden;">
+
+		<div id="changes_notice" style="position:absolute; top:56px; left:0; right:0; padding-right:8px; font-family:Arial,sans-serif; font-size:12px; color:darkorange; text-align:right; visibility:hidden;"><strong>REFRESH THE PAGE TO APPLY CHANGES</strong></div>
+
+		<div style="height:48px; font-family:Arial,sans-serif; font-size:16px;">
+			<img id="logo" src="icons/icon48.png" alt="icon" style="width:48px; height:48px; margin-right:8px; float:left; cursor:pointer;" />
+			<p style="padding-top:15px; white-space:nowrap;">Settings</p>
+		</div>
+
+		<hr />
+
+		<div style="font-family:Arial,sans-serif; font-size:13px;">
+
+			<div style="height:33px; padding-top:6px;">
+
+				Bar style:&nbsp;&nbsp;
+				<select id="select_style">
+				<option value="0">Classic</option>
+				<option value="1" selected="selected">Modern</option>
+				</select>
+				&nbsp;&nbsp;<span style="position:relative; left:10px; color:gray;">Preview:</span>
+
+				<div style="position:relative; left:221px; bottom:15px; height:8px; width:120px;"><div class="ytrp_wrapper no_transition"><div class="ytrp_rb_bg ytrp_rb_bg_bottom" style="position:absolute; bottom:0px; width:120px;"><div class="ytrp_rb_fg ytrp_rb_fg_like" style="width: 112px;"></div><div class="ytrp_rb_fg ytrp_rb_fg_dislike" style="width: 7px;"></div></div><div class="ytrp_tooltip" style="height: 100%;" title="93.8% likes (597 ratings)&#10;RP score: 8"></div></div></div>
+
+				<div style="position:relative; left:293px; bottom:38px; width:46px; height:19px; z-index:2;"><img class="ytrp_demo_timenode" src="icons/timenode.png" width="46px" height="14px" /></div>
+
+				<span id="demo_thumbnail" style="display:inline-block; position:relative; top:-25px; left:276px; width:65px; height:37px; background-image:url('icons/thumbnail.jpg'); opacity:0.0;"><div class="ytrp_wrapper no_transition"><div class="ytrp_rb_bg ytrp_rb_bg_bottom"><div class="ytrp_rb_fg ytrp_rb_fg_hl ytrp_rb_fg_hl_bottom"></div></div><div class="ytrp_rb_bg ytrp_rb_bg_top"><div class="ytrp_rb_fg ytrp_rb_fg_hl ytrp_rb_fg_hl_top"></div></div><div class="ytrp_rb_bg ytrp_rb_bg_left"><div class="ytrp_rb_fg ytrp_rb_fg_hl ytrp_rb_fg_hl_left"></div></div><div class="ytrp_rb_bg ytrp_rb_bg_right"><div class="ytrp_rb_fg ytrp_rb_fg_hl ytrp_rb_fg_hl_right"></div></div><div class="ytrp_tooltip" title="93.8% likes (597 ratings)&#10;RP score: 8"></div></div></span>
+
+				<div id="demo_thumbnail_timenode" style="position:relative; left:293px; bottom:52px; width:46px; height:19px; z-index:2; opacity:0.0;"><img class="ytrp_demo_timenode" src="icons/timenode.png" width="46px" height="14px" /></div>
+
+			</div>
+
+			<div style="height:33px;">
+			Bar thickness:&nbsp;&nbsp;
+			<input id="range_thickness" type="range" min="2" max="7" value="4" step="1" style="position:relative; top:4px; height:15px; width:100px;" />
+			&nbsp;&nbsp;<label id="label_thickness">4 pixels</label>
+			</div>
+
+			<div style="height:54px;">
+			Highlighted videos:&nbsp;&nbsp;
+			<input id="range_highlighted" type="range" min="0" max="8" value="0" step="1" style="position:relative; top:4px; height:15px; width:100px;" />
+			&nbsp;&nbsp;<label id="label_highlighted">Disabled</label>
+			<br />
+			<span style="position:relative; top:5px; color:gray;" title="Highlighted videos will always be less than half of the total">Best videos in every page will show a box around them</span>
+			</div>
+
+			<div style="height:30px;">
+			<input id="checkbox_showrpscore" type="checkbox" style="position:relative; left:-3px; top:2px;" />Show RP score for every video (from 0 to 10)
+			</div>
+
+			<div style="height:54px;">
+			Bar opacity:&nbsp;&nbsp;
+			<input id="range_opacity" type="range" min="0" max="8" value="8" step="1" style="position:relative; top:4px; height:15px; width:100px;" />
+			&nbsp;&nbsp;<label id="label_opacity">Opaque</label>
+			<br />
+			<span style="position:relative; top:5px; color:gray;">Move the mouse over thumbnails to see at 100% opacity</span>
+			</div>
+
+			<div style="height:54px;">
+			Cache expiration:&nbsp;&nbsp;
+			<input id="range_caching" type="range" min="0" max="7" value="3" step="1" style="position:relative; top:4px; height:15px; width:100px;" />
+			&nbsp;&nbsp;<label id="label_caching">1 hour</label>
+			<br />
+			<span style="position:relative; top:5px; color:gray;" title="The cache is deleted when you close Google Chrome">Cached bars load faster but display outdated data</span>
+			</div>
+
+			<div style="height:62px;">
+			<input id="checkbox_showpageicon" type="checkbox" checked="checked" style="position:relative; left:-3px; top:2px;" />Show address bar settings icon when on YouTube
+			<br />
+			<span style="position:relative; top:5px; color:gray;">Go to Tools, Extensions, on Google Chrome, and find the<br />Settings link for the extension to show this dialog again</span>
+			</div>
+
+		</div>
+
+	</div>
+
+
+</body>
+
 </html>
