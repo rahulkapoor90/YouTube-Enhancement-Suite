@@ -1,0 +1,26 @@
+{
+   "extension_description": {
+      "message": "Enhance your browsing experience on YouTube™."
+   },
+   "extension_name": {
+      "message": "Youtube™ Enhancement Suite"
+   },
+   "extension_short_name": {
+      "message": "YES"
+   },
+   "like_on_facebook": {
+      "message": "Rate us on Facebook"
+   },
+   "options": {
+      "message": "YES Settings"
+   },
+   "options_short": {
+      "message": "Settings"
+   },
+   "page_action_title": {
+      "message": "The ads are automatically skipped"
+   },
+   "rate_this_extension": {
+      "message": "Rate us on Google"
+   }
+}

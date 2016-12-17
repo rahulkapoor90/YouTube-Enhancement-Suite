@@ -35,14 +35,15 @@
       "550": "icons/icon550.png"
    },
    "manifest_version": 2,
-   "name": "YouTube Enhancement Suite",
+   "default_locale": "en",
+   "name": "__MSG_extension_name__",
    "minimum_chrome_version": "34",
    "options_ui": {
       "chrome_style": true,
       "page": "popup.html"
    },
    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-   "description": "Enhance your browsing experience on YouTube™.",
+   "description": "__MSG_extension_description__",
    "permissions": [ "activeTab", "storage", "tabs", "notifications","*://*/*", "tabs", "contextMenus", "webRequest", "webRequestBlocking"],
    "short_name": "YES",
    "version": "0.5.2",

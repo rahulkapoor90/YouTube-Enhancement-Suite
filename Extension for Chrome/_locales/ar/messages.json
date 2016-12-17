@@ -1,0 +1,26 @@
+{
+   "extension_description": {
+      "message": "تعزيز تجربة التصفح الخاص بك على موقع YouTube ™."
+   },
+   "extension_name": {
+      "message": "جناح يوتيوب ™ تعزيز"
+   },
+   "extension_short_name": {
+      "message": "YES"
+   },
+   "like_on_facebook": {
+      "message": "Rate us on Facebook"
+   },
+   "options": {
+      "message": "YES إعدادات"
+   },
+   "options_short": {
+      "message": "إعدادات"
+   },
+   "page_action_title": {
+      "message": "The ads are automatically skipped"
+   },
+   "rate_this_extension": {
+      "message": "Rate us on Google"
+   }
+}
